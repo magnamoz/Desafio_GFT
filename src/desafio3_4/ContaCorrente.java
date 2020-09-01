@@ -1,0 +1,20 @@
+package desafio3_4;
+
+public class ContaCorrente extends Conta implements Imposto {
+
+	public  ContaCorrente (int numero, String titular, double saldo) {
+		super(numero, titular, saldo);
+	}
+	
+	@Override
+	public double rendimento() {
+		super.saldo += saldo * 0.03;
+		return saldo;
+	}
+
+	@Override
+	public double calcularImposto() {
+		double imposto = rendimento() * 0.25;
+		return imposto;
+	}
+}
